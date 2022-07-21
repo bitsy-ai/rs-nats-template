@@ -37,7 +37,7 @@
     "@asyncapi/generator-filters": "^2.1.0",
     "@asyncapi/generator-hooks": "^0.1.0",
     "@asyncapi/generator-react-sdk": "^0.2.23",
-    "puppeteer": "^5.2.1"
+    "puppeteer": "^15.5.0"
   },
   "release": {
     "branches": [
@@ -62,7 +62,14 @@
   },
   "generator": {
     "renderer": "react",
+    "supportedProtocols": [
+      "nats"
+    ],
     "parameters": {
+      "packageName": {
+        "description": "Name of cargo package. Must conform to the cargo package.name specification: https://doc.rust-lang.org/cargo/reference/manifest.html#the-name-field",
+        "default": "asyncapi-nats-rs-client"
+      },
       "asyncapiFileDir": {
         "description": "Custom location of the AsyncAPI file that you provided as an input in generation. By default it is located in the root of the output directory"
       },
@@ -107,7 +114,6 @@
     "eslint-plugin-jest": "^23.20.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-security": "^1.4.0",
-    "eslint-plugin-sonarjs": "^0.5.0",
     "jest": "^27.2.5",
     "markdown-toc": "^1.2.0",
     "rimraf": "^3.0.2",
